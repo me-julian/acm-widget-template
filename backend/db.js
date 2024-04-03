@@ -1,6 +1,8 @@
 import sqlite3 from 'sqlite3';
 const db = new sqlite3.Database(':memory:');
 
+// DO NOT CHANGE THIS FILE
+
 db.serialize(() => {
     db.run('CREATE TABLE lorem (info TEXT)');
     const stmt = db.prepare('INSERT INTO lorem VALUES (?)');

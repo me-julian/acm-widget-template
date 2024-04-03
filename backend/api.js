@@ -2,6 +2,8 @@ import express from 'express';
 import db from './db.js';
 import config from '../config.js';
 
+// DO NOT CHANGE THIS FILE
+
 const app = express();
 
 app.use(express.json());
