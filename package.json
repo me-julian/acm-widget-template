@@ -1,11 +1,11 @@
 {
-    "name": "@acm-widgets/PKG_NAME",
+    "name": "REPLACEME",
     "type": "module",
     "version": "1.0.0",
-    "description": "PKG_DESCR",
+    "description": "",
     "main": "index.js",
     "keywords": [],
-    "author": "PKG_AUTHORS",
+    "author": "",
     "license": "ISC",
     "scripts": {
         "dev:frontend": "vite",

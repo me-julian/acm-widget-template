@@ -4,7 +4,7 @@ This is a template to build a widget for the [ACM Widgets](https://github.com/me
 
 ## Getting Started
 
-This repo is intended to be published as an NPM package and used in the main repo without changes to the overall site structure. As such, pay attention to the instructions for where and what changes you should make when building your widget [below](#Architecture/Tech-Stack-Details).
+This repo is intended to be published as an NPM package and used in the main repo without changes to the overall site structure. As such, pay attention to the instructions for where and what changes you should make when building your widget [below](#tech-stack-details).
 
 First, if building in parallel with another developer, it's recommended that you both setup [Prettier](https://prettier.io/) with auto-formatting on save. A basic config is already provided if you already have that set up.
 
@@ -35,7 +35,7 @@ Open two terminals in the project root and run `npm run dev:backend` and `npm ru
 └── vite.config.js
 ```
 
-## Architecture/Tech Stack Details
+## Tech Stack Details
 
 ### Frontend
 

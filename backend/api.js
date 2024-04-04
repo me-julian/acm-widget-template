@@ -30,10 +30,18 @@ app.use((req, res, next) => {
 });
 
 import router from './router.js';
+
 app.use(config.routerBasePath, router);
 
 app.listen(5000, () => {
     console.log(`[server]: Server is running at http://127.0.0.1:5000`);
 });
+
+if (config.routerBasePath.includes('REPLACEME')) {
+    console.warn(
+        "\nWARNING: You haven't set your widget/package name yet. You should run 'node init.js' in order to set the package details.\n" +
+            'Make sure you use the same name as your collaborators.\n'
+    );
+}
 
 export default app;
