@@ -4,6 +4,19 @@ This is a template to build a widget for the [ACM Widgets](https://github.com/me
 
 It's intended as a simple coding exercise for two or more people to work on together and finish in a short period of time.
 
+## Widget Ideas
+
+Here are some ideas for what you could build:
+
+-   Automatically pair attendees for mentorship or generally following up after ACM that month
+-   Mini-profiles for attendees
+-   Carousel/slider of other meetups/events
+-   Form to add attendees to the database
+-   Countdown to next ACM meet
+-   Generate a QR Code that leads somewhere useful like the Meetup or Slack pages.
+-   Build an animated/interactive logo for ACM, maybe even using Three.js
+-   Use Speech-To-Text to automatically catalog attendees and their interests from their introduction
+
 ## Prerequisites
 
 -   Git
@@ -12,19 +25,23 @@ It's intended as a simple coding exercise for two or more people to work on toge
 
 ## Getting Started
 
+### Overview
+
 This project is built so all widgets can be built independently, published to NPM, and imported into the main repo/site with minimal changes.
 
 This is all handled by the project setup for you, but pay attention to the instructions for where and what changes you should make when building your widget.
 
-> Also be mindful of what you check into source control and publish to NPM. Don't hardcode personal information, tokens, or any other sensitive data.
+> Also be mindful of what you check into source control and publish to NPM. Don't share or hardcode personal information, tokens, or any other sensitive data.
 
-A basic [Prettier](https://prettier.io/) auto-formatting config is provided (`/.prettierrc`). It may be best not to use it unless everyone working on your widget does. Enabling format on save is recommended.
+A basic [Prettier](https://prettier.io/) auto-formatting config is provided (`/.prettierrc`). Enabling format on save is recommended. It may be best not to use it unless everyone working on your widget does.
+
+### Instructions
 
 1. Clone this template repository.
 
 Click the green "Use this template" button in the top-right of the repo's Github page and create your own repo.
 
-If you have any collaborators make sure you go to your repo's Settings > Collaborators > Add people and invite them so they can make changes.
+If you have any collaborators, decide who will clone the repo, then make sure you go to your repo's Settings > Collaborators > Add people and invite them so they can make changes.
 
 2. If you want your widget to be imported into the main site for demonstration, follow the instructions in [Publishing to NPM](#publishing-to-npm).
 
@@ -84,7 +101,9 @@ This will get replaced with the correct string by Vite automatically.
 
 #### Styling
 
-The project uses standard CSS. The provided styling is written using the [Block Element Modifier](https://getbem.com/) method, but this method is specifically made to be modular so you should be able to change and add styles however you like without much worry.
+The project uses standard CSS. The provided styling is written using the [Block Element Modifier](https://getbem.com/) method, but this method is specifically made to be modular so you should be able to add styles however you like without much worry.
+
+Please keep your widget contained within its grid container.
 
 ### Backend
 
@@ -103,7 +122,7 @@ Publishing to NPM will allow us to show all of the widgets together on the same 
 
 1. Create/log in to your [NPM account](https://www.npmjs.com/)
 
-> **Only do this on a trusted machine.** This will authenticate your local NPM install to act as this user.
+> **Only do this on a trusted machine.** This will authenticate your local NPM installation to act as this user.
 
 Run `npm adduser`, which should prompt you to log in/sign up via your browser.
 
