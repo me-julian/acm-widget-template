@@ -1,12 +1,16 @@
 {
     "name": "@acm-widgets/testtwo",
     "type": "module",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "",
-    "main": "index.cjs",
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "main": "index.js",
+    "exports": {
+        "router": "./backend/router",
+        "Widget": "./frontend/src/widget/Widget"
+    },
     "scripts": {
         "dev:frontend": "vite",
         "dev:backend": "nodemon ./backend/api.js",
