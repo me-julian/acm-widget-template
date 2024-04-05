@@ -1,4 +1,5 @@
 import Widget from './widget/Widget';
+import config from '../../config';
 import './App.css';
 
 // DO NOT CHANGE
@@ -7,7 +8,9 @@ function App() {
         <>
             <h1 className="main-title">Austin Code Mentorship Widgets</h1>
             <div className="widgets">
-                <Widget />
+                <Widget
+                    apiUrl={`http://127.0.0.1:5000${config.routerBasePath}`}
+                />
             </div>
             <a
                 href="https://github.com/me-julian/acm-widgets"
