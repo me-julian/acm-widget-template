@@ -1,9 +1,9 @@
 {
     "name": "@acm-widgets/testtwo",
     "type": "module",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
-    "main": "index.js",
+    "main": "index.cjs",
     "keywords": [],
     "author": "",
     "license": "ISC",
