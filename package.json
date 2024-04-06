@@ -1,12 +1,12 @@
 {
-    "name": "REPLACEME",
+    "name": "@acm-widgets/REPLACEME",
     "type": "module",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "main": "index.js",
     "scripts": {
         "dev:frontend": "vite",
         "dev:backend": "nodemon ./backend/api.js",

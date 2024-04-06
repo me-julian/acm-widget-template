@@ -91,13 +91,13 @@ The frontend is written using vanilla ReactJS using Vite. There is a copy of the
 
 Don't rename the Widget component and make sure everything you make or change is within that component.
 
-When making calls to the backend, use the provided global variable to get the correct URL, as seen in the example widget code. Example:
+When making calls to the backend, use the `apiUrl` prop passed to your Widget as the base of your url. Example:
 
 ```js
-const response = await fetch(`${__API_URL__}/users/1`, options);
+const response = await fetch(`${apiUrl}/users/1`, options);
 ```
 
-This will get replaced with the correct string by Vite automatically.
+The init.js script will ensure your routes don't conflict with anyone else's.
 
 #### Styling
 
@@ -135,3 +135,11 @@ In the root of the project, run `node init.js` and pick a unique, all lowercase,
 4. Publish the package
 
 Run `npm publish --access public`, and your local code will be published to NPM! Now the package can be imported into the main repo.
+
+Note that you need to sync your git repository with origin in order to publish.
+
+5. Update your package
+
+If you want to re-publish/update your package, run `npm version major` to increment your version number and then re-run `npm publish --access public`.
+
+Using 'major' suggests breaking backwards compatability, which is the safest option.

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './widget.css';
 
-function Widget() {
+function Widget({ apiUrl }) {
     const [count, setCount] = useState(0);
     const [isEven, setIsEven] = useState(true);
 
@@ -9,7 +9,7 @@ function Widget() {
         const abortController = new AbortController();
 
         async function fetchIsEven() {
-            const response = await fetch(`${__API_URL__}/isEven`, {
+            const response = await fetch(`${apiUrl}/isEven`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ num: count }),
