@@ -1,5 +1,4 @@
 import express from 'express';
-import db from './db.js';
 import config from '../config.js';
 
 // DO NOT CHANGE THIS FILE
@@ -40,7 +39,7 @@ app.listen(5000, () => {
 if (config.routerBasePath.includes('REPLACEME')) {
     console.warn(
         "\nWARNING: You haven't set your widget/package name yet. You should run 'node init.js' in order to set the package details.\n" +
-            'Make sure you use the same name as your collaborators.\n'
+            'Make sure you use the same name as your collaborators or have one person set and commit to github.\n'
     );
 }
 

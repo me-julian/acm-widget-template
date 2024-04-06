@@ -116,7 +116,17 @@ The backend is comprised of an Express.js REST API server and an in-memory SQLit
 
 `api.js` and `db.js` are mostly mirrors of those in the main repository. You shouldn't make any changes here.
 
-Instead, add all of your REST endpoint handlers in `router.js`. An example POST endpoint is already provided.
+#### REST API
+
+Add all of your API endpoint handlers in `router.js`. Feel free to use any endpoint urls, your router will be separate from everyone else's. A couple example POST endpoints are already provided.
+
+#### Database
+
+I didn't have time to build a robust system for the database, so you can access the shared in-memory sqlite3 database inside `widgetDb.js`.
+
+You will likely break things if you change the schema of the attendees table or attempt to create a table with the same name as another group.
+
+As such, I recommend adding a unique suffix to all tables based on your package name in order to avoid conflicts. If you want a more substantial attendees schema, you should create your own.
 
 ## Publishing to NPM
 

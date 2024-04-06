@@ -6,15 +6,14 @@ function Widget({ apiUrl }) {
     const [count, setCount] = useState(0);
     const [isEven, setIsEven] = useState(true);
 
-    useEffect(() => {
-        const abortController = new AbortController();
+    const [attendees, setAttendees] = useState(null);
 
+    useEffect(() => {
         async function fetchIsEven() {
             const response = await fetch(`${apiUrl}/isEven`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ num: count }),
-                signal: abortController.signal,
             });
 
             if (response.ok) {
@@ -24,11 +23,22 @@ function Widget({ apiUrl }) {
         }
 
         fetchIsEven();
-
-        return () => {
-            abortController.abort();
-        };
     }, [count]);
+
+    useEffect(() => {
+        async function fetchAttendees() {
+            const response = await fetch(`${apiUrl}/attendees`, {
+                method: 'GET',
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setAttendees(data);
+            }
+        }
+
+        fetchAttendees();
+    }, []);
 
     return (
         <div className="wrapper-no-remove">
@@ -38,6 +48,8 @@ function Widget({ apiUrl }) {
                     Count: {count}
                 </button>
                 <h5>Count is {isEven ? 'even' : 'odd'}</h5>
+                <h5>First attendee: {attendees && attendees[0].firstname}</h5>
+                <h5>Attendee count: {attendees && attendees.length}</h5>
             </div>
         </div>
     );
