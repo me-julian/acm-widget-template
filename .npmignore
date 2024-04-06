@@ -9,7 +9,6 @@ vite.config.js
 /frontend/src/App.css
 
 /backend/api.js
-/backend/db.js
 
 #    .gitignore
 
