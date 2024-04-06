@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './widget.css';
-import '../App.css';
 
 function Widget({ apiUrl }) {
     const [count, setCount] = useState(0);
