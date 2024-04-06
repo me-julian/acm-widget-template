@@ -1,3 +1,3 @@
 export default {
-    routerBasePath: '/api/REPLACEME',
+    routerBasePath: '/api/testtwo',
 };

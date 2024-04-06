@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './widget.css';
+import '../App.css';
 
 function Widget({ apiUrl }) {
     const [count, setCount] = useState(0);
@@ -30,8 +31,8 @@ function Widget({ apiUrl }) {
     }, [count]);
 
     return (
-        <div className="wrapper">
-            <div className="widget">
+        <div className="wrapper-no-remove">
+            <div className="widget-no-remove scrollbar-no-remove">
                 <h1>Hello Widget</h1>
                 <button onClick={() => setCount(count + 1)} className="btn">
                     Count: {count}

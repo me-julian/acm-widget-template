@@ -27,6 +27,8 @@ Here are some ideas for what you could build:
 
 ### Overview
 
+You are given a ~500x400px box on the page in which you can build your widget.
+
 This project is built so all widgets can be built independently, published to NPM, and imported into the main repo/site with minimal changes.
 
 This is all handled by the project setup for you, but pay attention to the instructions for where and what changes you should make when building your widget.
@@ -136,10 +138,10 @@ In the root of the project, run `node init.js` and pick a unique, all lowercase,
 
 Run `npm publish --access public`, and your local code will be published to NPM! Now the package can be imported into the main repo.
 
-Note that you need to sync your git repository with origin in order to publish.
-
 5. Update your package
 
 If you want to re-publish/update your package, run `npm version major` to increment your version number and then re-run `npm publish --access public`.
 
 Using 'major' suggests breaking backwards compatability, which is the safest option.
+
+Note that you need to sync your git repository with origin in order to update and publish.
