@@ -53,7 +53,7 @@ If you have any collaborators, decide who will clone the repo, then make sure yo
 
 5. Open `localhost:5173` to view the site.
 
-6. Edit files in `/frontend/src/widget` to work on the frontend and add API route handlers in `/backend/router.js` on the backend.
+6. Edit files in `/frontend/src/widget` to work on the frontend, add API route handlers in `/backend/router.js` and set up your database tables in `/backend/db.js`.
 
 More details [below](#tech-stack-details).
 
@@ -64,7 +64,7 @@ Files/directories wrapped in \*\* \*\* are safe to edit.
 ```bash
 ├── backend
 │ ├── api.js
-│ ├── db.js
+│ ├── **db.js** # Initialize your database tables and seed data here
 │ ├── **router.js** # All of your API endpoints go here
 ├── frontend
 │ ├── src
@@ -91,12 +91,12 @@ Files/directories wrapped in \*\* \*\* are safe to edit.
 
 The frontend is written using vanilla ReactJS using Vite. There is a copy of the site for testing, but you will build your widget in the `/frontend/src/widget` folder. A basic example component is provided.
 
-Don't rename the Widget component and make sure everything you make or change is within that component.
+Contain all your changes to the frontend to the widget component (or subcomponents you create) and any CSS you apply within it.
 
 When making calls to the backend, use the `apiUrl` prop passed to your Widget as the base of your url. Example:
 
 ```js
-const response = await fetch(`${apiUrl}/users/1`, options);
+const response = await fetch(`${apiUrl}/attendees/1`, options);
 ```
 
 The init.js script will ensure your routes don't conflict with anyone else's.
@@ -110,11 +110,11 @@ Please keep your widget contained within its grid container.
 ### Backend
 
 -   [Express.js](https://expressjs.com/)
--   [SQLite3](https://github.com/TryGhost/node-sqlite3/wiki)
+-   [SQLite3](https://www.sqlite.org/docs.html)
 
 The backend is comprised of an Express.js REST API server and an in-memory SQLite database.
 
-`api.js` and `db.js` are mostly mirrors of those in the main repository. You shouldn't make any changes here.
+Don't make any changes to `api.js`.
 
 #### REST API
 
@@ -122,11 +122,7 @@ Add all of your API endpoint handlers in `router.js`. Feel free to use any endpo
 
 #### Database
 
-I didn't have time to build a robust system for the database, so you can access the shared in-memory sqlite3 database inside `widgetDb.js`.
-
-You will likely break things if you change the schema of the attendees table or attempt to create a table with the same name as another group.
-
-As such, I recommend adding a unique suffix to all tables based on your package name in order to avoid conflicts. If you want a more substantial attendees schema, you should create your own.
+Every widget will get a unique in-memory SQLite3 database in `db.js`. Some examples are provided but you can find the Node API docs [here](https://github.com/TryGhost/node-sqlite3/wiki)
 
 ## Publishing to NPM
 
@@ -139,6 +135,8 @@ Publishing to NPM will allow us to show all of the widgets together on the same 
 Run `npm adduser`, which should prompt you to log in/sign up via your browser.
 
 2. Have Julian invite your account to the @acm-widgets organization
+
+Let me know your account's username or email. The invite will arrive in the email you signed up with.
 
 3. Initialize your package
 
@@ -154,4 +152,4 @@ If you want to re-publish/update your package, run `npm version major` to increm
 
 Using 'major' suggests breaking backwards compatability, which is the safest option.
 
-Note that you need to sync your git repository with origin in order to update and publish.
+Note that you need to sync your git repository with origin in order to update.
